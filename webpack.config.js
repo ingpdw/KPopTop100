@@ -16,8 +16,8 @@ module.exports = {
     path: __dirname + '/js',
   },
   plugins: [
-    // new webpack.BannerPlugin( info ),
-    // new webpack.optimize.UglifyJsPlugin()
+    new webpack.BannerPlugin( info ),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [

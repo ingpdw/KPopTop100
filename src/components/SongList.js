@@ -21,7 +21,16 @@ class SongList extends React.Component {
         songs: data.melon.songs.song
       });
 
+      this.onFirst();
+
     }.bind(this) );
+  }
+
+  onFirst() {
+  
+    this.props.onFirst &&
+      this.props.onFirst( this.state.songs[ 0 ].songName );
+
   }
 
   constructor( props ) {
@@ -42,6 +51,7 @@ class SongList extends React.Component {
       <ol style={ olStyle }>
         { this.state.songs.map( ( item, index ) => {
           return ( <Song
+            key = { item.songId.toString() }
             onSearch = { this.props.onSearch }
             rank={ index + 1 }
             songName={ item.songName }

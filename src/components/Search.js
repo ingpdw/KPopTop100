@@ -34,7 +34,7 @@ class Search extends React.Component {
 
     let searchStyle = {
       position: 'fixed',
-      top: '60px',
+      top: '40px',
       right: '10px',
       zIndex: '10000'
     }

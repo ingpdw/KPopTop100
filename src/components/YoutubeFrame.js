@@ -18,8 +18,8 @@ class YoutubeFrame extends React.Component {
     let youtubeUrl = 'http://www.youtube.com/embed';
     let youtubeParam = '?listType=search&autoplay=0&rel=0&hd=1&showinfo=0';
     let frameStyle = {
-      margin: 0,
-      padding:0,
+      margin: '10px 0 10px 0',
+      padding: 0,
       width: '100%',
       height: '220px',
       border: 0
