@@ -5,7 +5,7 @@ info += '\nauthor: ' + pkg.author;
 info += '\nupdate: ' + new Date;
 info += '\nversion: ' + pkg.version;
 
-//process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'production';
 
 module.exports = {
   context: __dirname + '/src',
@@ -19,11 +19,11 @@ module.exports = {
   },
   plugins: [
     new webpack.BannerPlugin( info ),
-    //new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
-    new webpack.EnvironmentPlugin(['NODE_ENV'])
+    new webpack.EnvironmentPlugin(['NODE_ENV']),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
