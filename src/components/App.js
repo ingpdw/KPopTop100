@@ -9,19 +9,6 @@ class App extends React.Component {
 
     super( props );
     this.state = { query: '', target: '' };
-    this.onSearch = this.onSearch.bind( this );
-    this.onFirst = this.onFirst.bind( this );
-  }
-
-  onFirst( value ) {
-    this.onSearch( value );
-  }
-
-  onSearch( value, target ) {
-    this.setState({
-      query: value,
-      target: target
-    });
   }
 
   render(){
@@ -29,7 +16,7 @@ class App extends React.Component {
         <div>
           <Header />
           <Search />
-          <SongList onSearch={ this.onSearch } onFirst={ this.onFirst }/>
+          <SongList/>
           <YoutubeFrame query={ this.state.query } target={ this.state.target }/>
         </div>
       );

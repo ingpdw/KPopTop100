@@ -15,7 +15,7 @@ class Song extends React.Component {
       return (
         <li style={ songStyle } key={ this.props.key }>
           <Rank rank={ this.props.rank } />
-          <SongName name={ this.props.songName } onSearch={ this.props.onSearch }/>
+          <SongName name={ this.props.songName }/>
           <Artist name={ this.props.artistName } />
         </li>
       );

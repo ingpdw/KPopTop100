@@ -1,4 +1,6 @@
 import React from 'react';
+import {searching} from '../actions';
+import { connect } from 'react-redux';
 
 class SongName extends React.Component {
 
@@ -25,5 +27,13 @@ class SongName extends React.Component {
       );
   }
 }
+
+let mapDispatchToProps = ( dispatch ) => {
+    return {
+      onSearch: ( sname, target ) => dispatch( searching( sname, target ) ),
+    }
+}
+
+SongName = connect( undefined, mapDispatchToProps )( SongName );
 
 export default SongName;

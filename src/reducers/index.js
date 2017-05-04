@@ -8,7 +8,7 @@ const searchInitialState = {
 const searching = ( state = searchInitialState, action ) => {
   switch( action.type ){
     case SEARCHING:
-      return Object.assign( {}, state, {value: action.value});
+      return Object.assign( {}, state, {name: action.name, target: action.target});
     default:
       return state;
   }

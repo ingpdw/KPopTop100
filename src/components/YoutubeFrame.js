@@ -12,6 +12,7 @@ class YoutubeFrame extends React.Component {
       jQuery( this.props.target ).parent( 'li' ).append( currentNode );
     }else{
       jQuery( '#root' ).prepend( currentNode );
+      jQuery( window ).scrollTop( 0 );
     }
   }
 
@@ -39,7 +40,8 @@ class YoutubeFrame extends React.Component {
 
 let mapStateToProps = ( state ) => {
     return {
-        query: state.searching.value
+        query: state.searching.name,
+        target: state.searching.target
     };
 }
 

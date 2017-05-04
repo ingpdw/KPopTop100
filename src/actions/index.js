@@ -1,8 +1,9 @@
 export const SEARCHING = 'SEARCHING';
 
-export function searching( value ) {
+export function searching( name, target ) {
   return {
     type: SEARCHING,
-    value: value
+    name: name,
+    target: target
   }
 }

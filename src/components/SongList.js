@@ -1,5 +1,7 @@
 import React from 'react';
 import Song from './Song';
+import { searching } from '../actions';
+import { connect } from 'react-redux';
 
 class SongList extends React.Component {
 
@@ -21,15 +23,9 @@ class SongList extends React.Component {
         songs: data.melon.songs.song
       });
 
-      this.onFirst();
+      this.props.onSearch( this.state.songs[ 0 ].songName );
 
     }.bind(this) );
-  }
-
-  onFirst() {
-
-    this.props.onFirst &&
-      this.props.onFirst( this.state.songs[ 0 ].songName );
   }
 
   constructor( props ) {
@@ -51,7 +47,6 @@ class SongList extends React.Component {
         { this.state.songs.map( ( item, index ) => {
           return ( <Song
             key = { item.songId.toString() }
-            onSearch = { this.props.onSearch }
             rank={ index + 1 }
             songName={ item.songName }
             artistName={ item.artists.artist[ 0 ].artistName }
@@ -62,5 +57,13 @@ class SongList extends React.Component {
     );
   }
 }
+
+let mapDispatchToProps = ( dispatch ) => {
+    return {
+      onSearch: ( sname ) => dispatch( searching( sname ) ),
+    }
+}
+
+SongList = connect( undefined, mapDispatchToProps )( SongList );
 
 export default SongList;
