@@ -30,7 +30,7 @@ class SongName extends React.Component {
 
 let mapDispatchToProps = ( dispatch ) => {
     return {
-      onSearch: ( sname, target ) => dispatch( searching( sname, target ) ),
+      onSearch: ( name, target ) => dispatch( searching( name, target ) ),
     }
 }
 
