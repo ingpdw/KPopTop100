@@ -1,12 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {searching} from '../actions';
 
 class Search extends React.Component {
 
   constructor( props ) {
     super( props );
-
     this.state = {value: ''};
-
     this.onKeyPress = this.onKeyPress.bind( this );
     this.onChange = this.onChange.bind( this );
   }
@@ -19,7 +19,6 @@ class Search extends React.Component {
   }
 
   onChange( evt ) {
-
     this.setState({
       value: evt.target.value
     });
@@ -61,5 +60,13 @@ class Search extends React.Component {
     );
   }
 }
+
+let mapDispatchToProps = ( dispatch ) => {
+    return {
+      onSearch: ( value ) => dispatch( searching( value ) ),
+    }
+}
+
+Search = connect( undefined, mapDispatchToProps )( Search );
 
 export default Search;

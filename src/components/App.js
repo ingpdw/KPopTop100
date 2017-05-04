@@ -6,6 +6,7 @@ import YoutubeFrame from './YoutubeFrame';
 
 class App extends React.Component {
   constructor( props ) {
+
     super( props );
     this.state = { query: '', target: '' };
     this.onSearch = this.onSearch.bind( this );
@@ -27,11 +28,10 @@ class App extends React.Component {
       return (
         <div>
           <Header />
-          <Search onSearch={ this.onSearch }/>
+          <Search />
           <SongList onSearch={ this.onSearch } onFirst={ this.onFirst }/>
           <YoutubeFrame query={ this.state.query } target={ this.state.target }/>
         </div>
-
       );
   }
 }

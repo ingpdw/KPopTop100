@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { connect } from 'react-redux';
 
 class YoutubeFrame extends React.Component {
 
@@ -35,5 +36,13 @@ class YoutubeFrame extends React.Component {
     );
   }
 }
+
+let mapStateToProps = ( state ) => {
+    return {
+        query: state.searching.value
+    };
+}
+
+YoutubeFrame = connect( mapStateToProps )( YoutubeFrame );
 
 export default YoutubeFrame;

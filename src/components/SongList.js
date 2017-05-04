@@ -27,10 +27,9 @@ class SongList extends React.Component {
   }
 
   onFirst() {
-  
+
     this.props.onFirst &&
       this.props.onFirst( this.state.songs[ 0 ].songName );
-
   }
 
   constructor( props ) {
