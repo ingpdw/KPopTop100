@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class SongList extends React.Component {
 
   componentDidMount() {
-    const planetKey = '97ab7564-88ff-3038-8c7f-ad6257ec2684';
+    const planetKey = 'b9f9b551-2f2a-319d-8ad1-beacf0086402';
     const planetApi = 'http://apis.skplanetx.com/melon/charts/todaytopsongs';
     PlanetX.init({
       appkey : planetKey,
