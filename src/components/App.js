@@ -12,7 +12,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.post('/set', {
+    axios.post('/kpop/get', {
         params: {
           info: 'kpop'
         }
