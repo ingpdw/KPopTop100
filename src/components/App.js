@@ -18,10 +18,10 @@ class App extends React.Component {
         }
       })
       .then(function (response) {
-        console.log(response);
+        console && console.log && console.log(response);
       })
       .catch(function (error) {
-        console.log(error);
+        console && console.log && console.log(error);
       });
   }
 
